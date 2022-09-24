@@ -144,34 +144,42 @@ class _HomePageState extends State<HomePage> {
             Center(
               child: Image.asset(
                 'assets/images/image3.png',
-                height: 220,
-                width: 220,
+                height: 180,
+                width: 180,
                 fit: BoxFit.contain,
               ),
             ),
-            Text(
-              "24",
-              style: TextStyle(
-                fontSize: 30.0,
-                color: Color(0xfff72585),
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              "Normal",
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Color(0xff2b2d42).withOpacity(0.90),
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            Text(
-              "Buen trabajo, sigue comiendo saludable y realiza actividad física.",
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Color(0xff2b2d42).withOpacity(0.90),
-                fontWeight: FontWeight.normal,
-              ),
+            Column(
+              children: [
+                Text(
+                  "24",
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    color: Color(0xfff72585),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "Normal",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Color(0xff2b2d42).withOpacity(0.90),
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                Text(
+                  "Buen trabajo, sigue comiendo saludable y realiza actividad física.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: Color(0xff2b2d42).withOpacity(0.80),
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

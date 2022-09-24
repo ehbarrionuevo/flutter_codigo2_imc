@@ -6,7 +6,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   double weight = 70;
   double height = 165;
 
@@ -103,7 +102,30 @@ class _HomePageState extends State<HomePage> {
                 setState(() {});
               },
             ),
-
+            const SizedBox(
+              height: 14.0,
+            ),
+            SizedBox(
+              width: double.infinity,
+              height: 48.0,
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff2b2d42),
+                ),
+                icon: const Icon(
+                  Icons.play_arrow_rounded,
+                ),
+                label: const Text(
+                  "Calcular",
+                  style: TextStyle(
+                    fontFamily: 'Manrope',
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

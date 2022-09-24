@@ -6,7 +6,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   double weight = 70;
+  double height = 165;
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +81,56 @@ class _HomePageState extends State<HomePage> {
                 max: 200,
                 onChanged: (double value) {
                   weight = value;
+                  setState(() {});
+                },
+              ),
+            ),
+
+            const SizedBox(
+              height: 10.0,
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: [
+                Text(
+                  height.toInt().toString(),
+                  style: TextStyle(
+                      fontSize: 26.0,
+                      fontFamily: "Manrope",
+                      color: Color(0xff2b2d42).withOpacity(0.80)),
+                ),
+                Text(
+                  "cm",
+                  style: TextStyle(
+                      fontSize: 14.0,
+                      fontFamily: "Manrope",
+                      color: Color(0xff2b2d42).withOpacity(0.80)),
+                ),
+              ],
+            ),
+            SliderTheme(
+              data: SliderThemeData(
+                  activeTrackColor: Color(0xfff72585).withOpacity(0.85),
+                  inactiveTrackColor: Color(0xff2b2d42).withOpacity(0.2),
+                  overlayColor: Color(0xfff72585).withOpacity(0.3),
+                  thumbColor: Color(0xfff72585),
+                  thumbShape: RoundSliderThumbShape(
+                    enabledThumbRadius: 14.0,
+                  ),
+                  overlayShape: RoundSliderOverlayShape(
+                    overlayRadius: 26.0,
+                  ),
+                  trackHeight: 8.0
+              ),
+              child: Slider(
+                value: height,
+                min: 50,
+                max: 220,
+                onChanged: (double value) {
+                  height = value;
                   setState(() {});
                 },
               ),

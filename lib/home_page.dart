@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Bienvenido, selecciona tu peso y altura",
+              "Bienvenido, selecciona tu peso y altura:",
               style: TextStyle(
                 fontFamily: 'Manrope',
                 fontSize: 16.0,
@@ -124,6 +124,20 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+              ),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              "Resultado:",
+              style: TextStyle(
+                fontSize: 16.0,
+                color: Color(0xff2b2d42).withOpacity(0.80),
               ),
             ),
           ],

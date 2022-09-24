@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: "IMC App",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: "Manrope",
         sliderTheme: SliderThemeData(
             activeTrackColor: const Color(0xfff72585).withOpacity(0.85),
             inactiveTrackColor: const Color(0xff2b2d42).withOpacity(0.2),

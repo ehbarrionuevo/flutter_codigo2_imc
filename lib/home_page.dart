@@ -146,10 +146,9 @@ class _HomePageState extends State<HomePage> {
                   mandarina.weight = weight;
                   mandarina.height = height;
 
-                  22.232323;
-                  print( mandarina.calculateBMI());
+                  setState(() {
 
-                  calculateBMI();
+                  });
 
                 },
                 style: ElevatedButton.styleFrom(
@@ -202,7 +201,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Text(
-                    result,
+                    mandarina.getResult(),
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Color(0xff2b2d42).withOpacity(0.90),

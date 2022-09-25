@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Center(
               child: Image.asset(
-                'assets/images/image2.png',
+                'assets/images/${mandarina.getImage()}.png',
                 height: 180,
                 width: 180,
                 fit: BoxFit.contain,
@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Text(
-                    mandarina.calculateBMI().toString(),
+                    mandarina.calculateBMI().toStringAsFixed(1),
                     style: TextStyle(
                       fontSize: 30.0,
                       color: Color(0xfff72585),

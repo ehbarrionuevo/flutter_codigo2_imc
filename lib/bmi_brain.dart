@@ -44,8 +44,16 @@ class BMIBrain {
     return recommendation;
   }
 
-  getImage(){
-
+  String getImage(){
+    String image = "";
+    if(_bmi < 18){
+      image = "image1";
+    } else if(_bmi < 25){
+      image = "image2";
+    } else{
+      image = "image3";
+    }
+    return image;
   }
 
 

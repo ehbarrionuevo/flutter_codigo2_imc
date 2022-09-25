@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:codigo2_bmi/bmi_brain.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,9 +14,22 @@ class _HomePageState extends State<HomePage> {
   double height = 165;
 
   double bmi = 0;
+  String result = "Normal";
+  String recommendation = "-";
 
-  calculateBMI(){
+
+  void calculateBMI(){
     bmi = weight / pow((height / 100), 2);
+    if(bmi < 18){
+      result = "Bajo en peso";
+      recommendation = "Debes de alimentarte mejor.";
+    } else if(bmi < 25){
+      result = "Normal";
+      recommendation = "Buen trabajo, sigue comiendo saludable.";
+    } else{
+      result = "Sobrepeso";
+      recommendation = "Debes de alimentarte mejor y realiza más actividad física.";
+    }
     setState(() {
 
     });
@@ -123,7 +137,12 @@ class _HomePageState extends State<HomePage> {
               height: 48.0,
               child: ElevatedButton.icon(
                 onPressed: () {
+
+                  BMIBrain mandarina = BMIBrain(weight: 60, height: 30);
+                  mandarina.calculateBMI();
+
                   calculateBMI();
+
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xff2b2d42),
@@ -157,43 +176,45 @@ class _HomePageState extends State<HomePage> {
             ),
             Center(
               child: Image.asset(
-                'assets/images/image3.png',
+                'assets/images/image2.png',
                 height: 180,
                 width: 180,
                 fit: BoxFit.contain,
               ),
             ),
-            Column(
-              children: [
-                Text(
-                  bmi.toStringAsFixed(1),
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    color: Color(0xfff72585),
-                    fontWeight: FontWeight.bold,
+            Center(
+              child: Column(
+                children: [
+                  Text(
+                    bmi.toStringAsFixed(1),
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      color: Color(0xfff72585),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
-                  "Normal",
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Color(0xff2b2d42).withOpacity(0.90),
-                    fontWeight: FontWeight.normal,
+                  Text(
+                    result,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Color(0xff2b2d42).withOpacity(0.90),
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  "Buen trabajo, sigue comiendo saludable y realiza actividad física.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Color(0xff2b2d42).withOpacity(0.80),
-                    fontWeight: FontWeight.normal,
+                  const SizedBox(
+                    height: 10.0,
                   ),
-                ),
-              ],
+                  Text(
+                    recommendation,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Color(0xff2b2d42).withOpacity(0.80),
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

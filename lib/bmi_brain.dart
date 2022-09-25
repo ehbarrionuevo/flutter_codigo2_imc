@@ -20,9 +20,7 @@ class BMIBrain {
   double calculateBMI2 ()=> weight / pow(height/100, 2);
 
   String getResult(){
-
     String result = "";
-
     if(_bmi < 18){
       result = "Bajo en peso";
     } else if(_bmi < 25){
@@ -30,10 +28,26 @@ class BMIBrain {
     } else{
       result = "Sobrepeso";
     }
-
     return result;
+  }
+
+
+  String getRecommendation(){
+    String recommendation = "";
+    if(_bmi < 18){
+      recommendation = "Debes de comer un poco más";
+    } else if(_bmi < 25){
+      recommendation = "Estás muy bien, sigue así, realiza actividad física.";
+    } else{
+      recommendation = "Debes de comer más sano y realiza más actividad física.";
+    }
+    return recommendation;
+  }
+
+  getImage(){
 
   }
+
 
 
 }

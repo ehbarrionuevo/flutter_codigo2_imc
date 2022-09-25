@@ -12,35 +12,11 @@ class _HomePageState extends State<HomePage> {
   double weight = 70;
   double height = 165;
 
-  double bmi = 0;
-  String result = "Normal";
-  String recommendation = "-";
-
   BMIBrain mandarina = BMIBrain();
 
 
-
-  void calculateBMI(){
-    bmi = weight / pow((height / 100), 2);
-    if(bmi < 18){
-      result = "Bajo en peso";
-      recommendation = "Debes de alimentarte mejor.";
-    } else if(bmi < 25){
-      result = "Normal";
-      recommendation = "Buen trabajo, sigue comiendo saludable.";
-    } else{
-      result = "Sobrepeso";
-      recommendation = "Debes de alimentarte mejor y realiza más actividad física.";
-    }
-    setState(() {
-
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-
-
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -212,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                     height: 10.0,
                   ),
                   Text(
-                    recommendation,
+                    mandarina.getRecommendation(),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14.0,

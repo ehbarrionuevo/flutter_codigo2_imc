@@ -4,8 +4,8 @@ class BMIBrain {
   double height;
 
   BMIBrain({
-    required this.weight,
-    required this.height,
+    this.weight = 0,
+    this.height = 0,
   });
 
   calculateBMI() {

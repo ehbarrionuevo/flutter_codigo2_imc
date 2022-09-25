@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:codigo2_bmi/bmi_brain.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +15,9 @@ class _HomePageState extends State<HomePage> {
   double bmi = 0;
   String result = "Normal";
   String recommendation = "-";
+
+  BMIBrain mandarina = BMIBrain();
+
 
 
   void calculateBMI(){
@@ -37,6 +39,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -138,7 +143,9 @@ class _HomePageState extends State<HomePage> {
               child: ElevatedButton.icon(
                 onPressed: () {
 
-                  BMIBrain mandarina = BMIBrain(weight: 60, height: 30);
+                  mandarina.weight = weight;
+                  mandarina.height = height;
+
                   mandarina.calculateBMI();
 
                   calculateBMI();

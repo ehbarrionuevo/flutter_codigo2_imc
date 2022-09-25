@@ -146,7 +146,8 @@ class _HomePageState extends State<HomePage> {
                   mandarina.weight = weight;
                   mandarina.height = height;
 
-                  mandarina.calculateBMI();
+                  22.232323;
+                  print( mandarina.calculateBMI());
 
                   calculateBMI();
 
@@ -193,7 +194,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Text(
-                    bmi.toStringAsFixed(1),
+                    mandarina.calculateBMI().toString(),
                     style: TextStyle(
                       fontSize: 30.0,
                       color: Color(0xfff72585),

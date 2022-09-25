@@ -1,4 +1,6 @@
 
+import 'dart:math';
+
 class BMIBrain {
   double weight;
   double height;
@@ -8,7 +10,8 @@ class BMIBrain {
     this.height = 0,
   });
 
-  calculateBMI() {
-    print("Calculando...");
+  double calculateBMI() {
+    double bmi = weight / pow(height/100, 2);
+    return bmi;
   }
 }
